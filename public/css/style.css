@@ -1753,6 +1753,7 @@ footer .credits {
   .card-box-b:hover .img-b {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
+    opacity: .05;
   }
 
   .card-box-a .price-a,
@@ -1773,6 +1774,7 @@ footer .credits {
   }
 
   .card-header-a .card-title-a {
+      color: #2eca6a;;
     font-size: 1.3rem;
   }
 

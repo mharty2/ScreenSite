@@ -18,11 +18,12 @@
       $('.back-to-top').fadeOut('slow');
     }
   });
+
   $('.back-to-top').click(function(){
     $('html, body').animate({scrollTop : 0},1500, 'easeInOutExpo');
     return false;
   });
-  
+
 	var nav = $('nav');
 	var navHeight = nav.outerHeight();
 
@@ -148,3 +149,18 @@
 	});
 
 })(jQuery);
+
+function catalogFilter(){
+	const selectionBox = document.getElementById('catalog-select');
+	const selection = selectionBox.options[selectionBox.selectedIndex].value;
+	if (selection === 'All') {
+		$('.door').show();
+		$('.window-screen').show();
+	} else if (selection === 'Door') {
+		$('.window-screen').hide();
+		$('.door').show();
+	} else if (selection === 'Window') {
+		$('.door').hide();
+		$('.window-screen').show();
+	}
+}
