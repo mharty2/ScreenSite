@@ -748,7 +748,7 @@ a:hover {
 }
 
 /*======================================
-//--//-->   BOX COLAPSE
+//--//-->   BOX COLLAPSE
 ======================================*/
 
 .box-collapse {
@@ -961,9 +961,19 @@ a:hover {
   border-left: 3px solid #2eca6a;
 }
 
+.red-text {
+  color: red;
+}
+
 .intro-single .title-single-box .title-single {
   font-weight: 600;
   font-size: 2.2rem;
+}
+
+.info-box {
+  padding: 1rem 1rem 1rem 1rem;
+  border: 3px solid #2eca6a;
+  margin-bottom: 50px;
 }
 
 .intro-single .breadcrumb-box {
@@ -1092,7 +1102,6 @@ a:hover {
 /*------/ Property Grid /-----*/
 
 .property-grid .grid-option {
-  text-align: right;
   margin-bottom: 2rem;
 }
 
@@ -1641,6 +1650,81 @@ footer .credits {
   background-color: #000000;
   color: #ffffff;
 }
+
+
+.shopping-cart-button {
+  padding: 1rem;
+  background-color: #2eca6a;
+}
+
+.shopping-cart-button:hover {
+  background-color: #26A858;
+}
+
+.shopping-cart-button i {
+  margin-right: 0.5rem;
+}
+
+.col-small {
+  position: relative;
+  width: 33%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.hide {
+  display: none;
+}
+.absolute {
+  position: absolute;
+}
+.shopping-cart-button:hover .shopping-cart-item {
+  display: block
+}
+.col-large{
+  position: relative;
+  width: 66%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.shopping-cart-dropdown-pane .dropdown-pane {
+  padding: 0;
+  background-color: white;
+  display: none !important;
+  position:absolute;
+  z-index: 300;
+}
+
+.shopping-cart-item {
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.shopping-cart-item-name, .shopping-cart-item-price {
+  padding: 0 1rem;
+}
+
+.shopping-cart-item-name p, .shopping-cart-item-price p {
+  margin: 0;
+  padding: 0;
+}
+
+.shopping-cart-title {
+  font-weight: bold;
+}
+
+.shopping-cart-checkout {
+  padding: 0.5rem;
+  margin-bottom: 0;
+}
+
+
 
 .btn.btn-b-n {
   background-color: #2eca6a;
