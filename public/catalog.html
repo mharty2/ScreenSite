@@ -43,89 +43,59 @@
       <h3 class="title-d">Your Cart</h3>
     </div>
     <span class="close-box-collapse right-boxed ion-ios-close"></span>
-    <div class="box-collapse-wrap form">
-      <form class="form-a">
-        <div class="row">
-          <div class="col-md-12 mb-2">
-            <div class="form-group">
-              <label for="Type">Keyword</label>
-              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword">
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="Type">Type</label>
-              <select class="form-control form-control-lg form-control-a" id="Type">
-                <option>All Type</option>
-                <option>For Rent</option>
-                <option>For Sale</option>
-                <option>Open House</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="city">City</label>
-              <select class="form-control form-control-lg form-control-a" id="city">
-                <option>All City</option>
-                <option>Alabama</option>
-                <option>Arizona</option>
-                <option>California</option>
-                <option>Colorado</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="bedrooms">Bedrooms</label>
-              <select class="form-control form-control-lg form-control-a" id="bedrooms">
-                <option>Any</option>
-                <option>01</option>
-                <option>02</option>
-                <option>03</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="garages">Garages</label>
-              <select class="form-control form-control-lg form-control-a" id="garages">
-                <option>Any</option>
-                <option>01</option>
-                <option>02</option>
-                <option>03</option>
-                <option>04</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="bathrooms">Bathrooms</label>
-              <select class="form-control form-control-lg form-control-a" id="bathrooms">
-                <option>Any</option>
-                <option>01</option>
-                <option>02</option>
-                <option>03</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="price">Min Price</label>
-              <select class="form-control form-control-lg form-control-a" id="price">
-                <option>Unlimite</option>
-                <option>$50,000</option>
-                <option>$100,000</option>
-                <option>$150,000</option>
-                <option>$200,000</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <button type="submit" class="btn btn-b">Search Property</button>
-          </div>
+    <div class="box-collapse-wrap container-fluid container-scroll">
+      <div class="row vertical-align-header">
+        <div class="col">
+          <h4 class="shopping-cart-header">Screen Type:</h4>
         </div>
-      </form>
+        <div class="col">
+          <h4 class="shopping-cart-header">Frame:</h4>
+        </div>
+        <div class="col">
+          <h4 class="shopping-cart-header">Installation Fee?</h4>
+        </div>
+        <div class="col">
+          <h4 class="shopping-cart-header">Quantity</h4>
+        </div>
+        <div class="col">
+          <h4 class="shopping-cart-header">Price:</h4>
+        </div>
+        <div class="col">
+          <h4 class="shopping-cart-header">Price With Discounts:</h4>
+        </div>
+        <div class="col">
+          <button class="btn remove" id="remove-btn-header">Remove</button>
+        </div>
+      </div>
+      <div class="row vertical-align-body">
+        <div class="col">
+          <h4 class="shopping-cart-header">Standard Fiberglass</h4>
+        </div>
+        <div class="col">
+          <h4 class="shopping-cart-header">Window</h4>
+        </div>
+        <div class="col">
+          <h4 class="shopping-cart-header">Yes</h4>
+        </div>
+        <div class="col">
+          <h4 class="shopping-cart-header">4</h4>
+        </div>
+        <div class="col">
+          <h4 class="shopping-cart-header">$22.50</h4>
+        </div>
+        <div class="col">
+          <h4 class="shopping-cart-header">$67.50</h4>
+        </div>
+        <div class="col">
+          <button class="btn remove">Remove</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-large"></div>
+        <div class="col-small"><h4 class="total" id="shopping-cart-total">Total: $0.00</h4>
+          <button class="btn btn-b">Place Order</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -224,9 +194,7 @@
         </div>
         <div class="col-large"></div>
         <div class="col-md-4 window-screen door">
-          <h2 class="card-title-a">
-            <span>Standard Fiberglass</span>
-          </h2>
+          <h2 class="card-title-a">Standard Fiberglass</h2>
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
               <img src="img/Standard-Fiberglass-Screen-Sample.jpg" alt="" class="img-a img-fluid">
@@ -234,8 +202,10 @@
             <div class="card-overlay">
               <div class="card-overlay-a-content">
                 <div class="card-body-a">
+                  <p class="screen-description">The standard for most screens in your house. Durable and
+                  the only screen that comes in gray, this is the most popular choice for windows.</p>
                   <div class="price-box d-flex">
-                    <span class="price-a">rent | $ 12.000</span>
+                      <span class="price-a" data-toggle="modal" data-target="#addToCartModal"><i class="fa fa-shopping-cart"></i> Add to Cart</span>
                   </div>
                 </div>
                 <div class="card-footer-a">
@@ -248,6 +218,10 @@
                       <h4 class="card-info-title">Door</h4>
                       <span>$25.00</span>
                     </li>
+                    <li>
+                      <h4 class="card-info-title">Colors:</h4>
+                      <span>Charcoal, Gray</span>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -255,9 +229,7 @@
           </div>
         </div>
         <div class="col-md-4 window-screen door">
-          <h2 class="card-title-a">
-            <span>Clear Advantage</span>
-          </h2>
+          <h2 class="card-title-a">Clear Advantage</h2>
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
               <img src="img/Clear-Advantage-Screen-Sample.jpg" alt="" class="img-a img-fluid">
@@ -267,8 +239,10 @@
                 <div class="card-header-a">
                 </div>
                 <div class="card-body-a">
+                  <p class="screen-description">Clear Advantage is optimized to allow more airflow and light with extended durability
+                    , while still maintaining visibility.</p>
                   <div class="price-box d-flex">
-                    <span class="price-a">rent | $ 12.000</span>
+                    <span class="price-a"  data-toggle="modal" data-target="#addToCartModal"><i class="fa fa-shopping-cart"></i> Add to Cart</span>
                   </div>
                 </div>
                 <div class="card-footer-a">
@@ -281,6 +255,10 @@
                       <h4 class="card-info-title">Door</h4>
                       <span>$30.00</span>
                     </li>
+                    <li>
+                      <h4 class="card-info-title">Colors:</h4>
+                      <span>Charcoal</span>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -288,9 +266,7 @@
           </div>
         </div>
         <div class="col-md-4 window-screen door">
-          <h2 class="card-title-a">
-            <span>Extra Strength</span>
-          </h2>
+          <h2 class="card-title-a">Extra Strength</h2>
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
               <img src="img/Extra-Strength-Screen-Sample.jpg" alt="" class="img-a img-fluid">
@@ -300,8 +276,10 @@
                 <div class="card-header-a">
                 </div>
                 <div class="card-body-a">
+                  <p class="screen-description">Extra Strength screen is thicker, sacrificing some visibility for
+                  its resistance to wear and tear.</p>
                   <div class="price-box d-flex">
-                    <span class="price-a">rent | $ 12.000</span>
+                    <span class="price-a" data-toggle="modal" data-target="#addToCartModal"><i class="fa fa-shopping-cart"></i> Add to Cart</span>
                   </div>
                 </div>
                 <div class="card-footer-a">
@@ -314,6 +292,10 @@
                       <h4 class="card-info-title">Door</h4>
                       <span>$30.00</span>
                     </li>
+                    <li>
+                      <h4 class="card-info-title">Colors:</h4>
+                      <span>Charcoal</span>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -321,9 +303,7 @@
           </div>
         </div>
         <div class="col-md-4 window-screen door">
-          <h2 class="card-title-a">
-            <span>Small Insect</span>
-          </h2>
+          <h2 class="card-title-a">Small Insect</h2>
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
               <img src="img/Insect-Screen-Sample.jpg" alt="" class="img-a img-fluid">
@@ -333,8 +313,10 @@
                 <div class="card-header-a">
                 </div>
                 <div class="card-body-a">
+                  <p class="screen-description">The Small Insect screen has a tighter weave to prevent insects from
+                  entering the house via the holes.</p>
                   <div class="price-box d-flex">
-                    <span class="price-a">rent | $ 12.000</span>
+                    <span class="price-a" data-toggle="modal" data-target="#addToCartModal"><i class="fa fa-shopping-cart"></i> Add to Cart</span>
                   </div>
                 </div>
                 <div class="card-footer-a">
@@ -347,6 +329,10 @@
                       <h4 class="card-info-title">Door</h4>
                       <span>$30.00</span>
                     </li>
+                    <li>
+                      <h4 class="card-info-title">Colors:</h4>
+                      <span>Charcoal</span>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -354,9 +340,7 @@
           </div>
         </div>
         <div class="col-md-4 door">
-          <h2 class="card-title-a">
-            <span>Pet Resistant</span>
-          </h2>
+          <h2 class="card-title-a">Pet Resistant</h2>
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
               <img src="img/Pet-Resistant-Screen-Sample.jpg" alt="" class="img-a img-fluid">
@@ -366,8 +350,11 @@
                 <div class="card-header-a">
                 </div>
                 <div class="card-body-a">
+                  <p class="screen-description">Pet Resistant screens' thicker weaves allow them to resist damage
+                  from even the most determined pets. The weave is thicker than Extra-Strength, but has larger holes than
+                  Small Insect.</p>
                   <div class="price-box d-flex">
-                    <span class="price-a">rent | $ 12.000</span>
+                    <span class="price-a" data-toggle="modal" data-target="#addToCartModal"><i class="fa fa-shopping-cart"></i> Add to Cart</span>
                   </div>
                 </div>
                 <div class="card-footer-a">
@@ -380,6 +367,10 @@
                       <h4 class="card-info-title">Door</h4>
                       <span>$32.50</span>
                     </li>
+                    <li>
+                      <h4 class="card-info-title">Colors:</h4>
+                      <span>Charcoal</span>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -387,9 +378,7 @@
           </div>
         </div>
         <div class="col-md-4 window-screen">
-          <h2 class="card-title-a">
-            <span>Solar Protection</span>
-          </h2>
+          <h2 class="card-title-a">Solar Protection</h2>
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
               <img src="img/Solar-Screen-Sample.jpg" alt="" class="img-a img-fluid">
@@ -399,8 +388,10 @@
                 <div class="card-header-a">
                 </div>
                 <div class="card-body-a">
+                  <p class="screen-description">The Solar Protection screen is meant to block out the majority of light.
+                  It's used in situations where you'd like to reduce cooling costs, or prevent the sun-bleaching of furniture, carpeting, and drapes.</p>
                   <div class="price-box d-flex">
-                    <span class="price-a">rent | $ 12.000</span>
+                    <span class="price-a" data-toggle="modal" data-target="#addToCartModal"><i class="fa fa-shopping-cart"></i> Add to Cart</span>
                   </div>
                 </div>
                 <div class="card-footer-a">
@@ -413,6 +404,10 @@
                       <h4 class="card-info-title">Door</h4>
                       <span>N/A</span>
                     </li>
+                    <li>
+                      <h4 class="card-info-title">Colors:</h4>
+                      <span>Charcoal</span>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -420,9 +415,7 @@
           </div>
         </div>
         <div class="col-md-4 door">
-          <h2 class="card-title-a">
-            <span>Doorway Alert</span>
-          </h2>
+          <h2 class="card-title-a">Doorway Alert</h2>
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
               <img src="img/Doorway-Alert-Screen-Sample.jpg" alt="" class="img-a img-fluid">
@@ -432,8 +425,10 @@
                 <div class="card-header-a">
                 </div>
                 <div class="card-body-a">
+                  <p class="screen-description">Doorway Alert uses a mix of charcoal and white colored screen to make the
+                  screen more visible and prevent people from accidentally walking into it.</p>
                   <div class="price-box d-flex">
-                    <span class="price-a">rent | $ 12.000</span>
+                    <span class="price-a" data-toggle="modal" data-target="#addToCartModal"><i class="fa fa-shopping-cart"></i> Add to Cart</span>
                   </div>
                 </div>
                 <div class="card-footer-a">
@@ -445,6 +440,47 @@
                     <li>
                       <h4 class="card-info-title">Door</h4>
                       <span>$27.50</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Colors:</h4>
+                      <span>Charcoal/White</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 window-screen door">
+          <h2 class="card-title-a">Pool/Patio</h2>
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <img src="img/Pool-and-Patio-Screen-Sample.jpg" alt="" class="img-a img-fluid">
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                </div>
+                <div class="card-body-a">
+                  <p class="screen-description">The Pool/Patio screen has UV coating and is resistant to high temperatures.
+                  It's commonly used in pool enclosures and screened-in porches.</p>
+                  <div class="price-box d-flex">
+                    <span class="price-a" data-toggle="modal" data-target="#addToCartModal"><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                  </div>
+                </div>
+                <div class="card-footer-a">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title">Window</h4>
+                      <span>22.50</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Door</h4>
+                      <span>$27.50</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Colors:</h4>
+                      <span>Charcoal</span>
                     </li>
                   </ul>
                 </div>
@@ -519,6 +555,42 @@
     </div>
   </footer>
   <!--/ Footer End /-->
+  <div class="modal fade" id="addToCartModal" tabindex="-1" role="dialog" aria-labelledby="addToCartModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">Basic Modal </h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">X</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h4>Quantity:</h4>
+          <label for="quantity"></label>
+          <input type="number" name="quantity" id="quantity" step="1" min="1" max="25" value="1">
+          <h4><br>Color:</h4>
+          <input type="radio" name="color" id="charcoal" value="charcoal">
+          <label for="charcoal">Charcoal</label>
+          <br>
+          <input type="radio" name="color" id="gray" value="gray">
+          <label for="gray">Gray</label>
+          <h4><br>Type:</h4>
+          <input type="radio" name="frame" id="window" value="window">
+          <label for="window">Window</label>
+          <br>
+          <input type="radio" name="frame" id="door" value="door">
+          <label for="door">Door</label>
+          <br>
+          <input type="radio" name="frame" id="non-standard" value="non-standard">
+          <label for="non-standard">Non-Standard</label>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" onclick="addToCart()">Add To Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>

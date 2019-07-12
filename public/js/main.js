@@ -3,7 +3,7 @@
   
   // Preloader
   $(window).on('load', function () {
-    if ($('#preloader').length) {
+	  if ($('#preloader').length) {
       $('#preloader').delay(100).fadeOut('slow', function () {
         $(this).remove();
       });
@@ -63,6 +63,11 @@
 	$('.close-box-collapse, .click-closed').on('click', function () {
 		$('body').removeClass('box-collapse-open').addClass('box-collapse-closed');
 		$('.menu-list ul').slideUp(700);
+	});
+
+	$('.price-a').on('click', function(event) {
+		const type = $(event.currentTarget).closest('.col-md-4').find('.card-title-a').text();
+		$('#myModalLabel').text(type);
 	});
 
 	/*--/ Navbar Menu Reduce /--*/
@@ -150,7 +155,7 @@
 
 })(jQuery);
 
-function catalogFilter(){
+function catalogFilter() {
 	const selectionBox = document.getElementById('catalog-select');
 	const selection = selectionBox.options[selectionBox.selectedIndex].value;
 	if (selection === 'All') {
@@ -163,4 +168,19 @@ function catalogFilter(){
 		$('.door').hide();
 		$('.window-screen').show();
 	}
+}
+//todo refine to let user know which fields
+function addToCart() {
+	if(document.getElementById('charcoal').checked || document.getElementById('gray').checked) {
+		if (document.getElementById('window').checked || document.getElementById('door').checked || document.getElementById('non-standard').checked) {
+			console.log('good to go');
+			return;
+		}
+	}
+	/*console.log("charcoal checked " + document.getElementById('charcoal').checked);
+	console.log("gray checked " + document.getElementById('gray').checked);
+	console.log("window checked " + document.getElementById('window').checked);
+	console.log("door checked " + document.getElementById('door').checked);
+	console.log("non-standard checked " + document.getElementById('non-standard').checked);*/
+	alert('Please fill out all fields');
 }
