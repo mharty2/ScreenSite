@@ -7,10 +7,18 @@
   <meta content="" name="keywords">
   <meta content="" name="description">
 
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init("user_WBvz5LordDa1Epl7Oc8OF");
+    })();
+  </script>
+
   <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <!--<link rel="manifest" href="favicon_io/site.webmanifest">-->
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
@@ -39,64 +47,93 @@
   <!--/ Nav Star /-->
   <div class="click-closed"></div> <!-- makes the background faded black-->
   <div class="box-collapse">
-    <div class="title-box-d">
-      <h3 class="title-d">Your Cart</h3>
-    </div>
-    <span class="close-box-collapse right-boxed ion-ios-close"></span>
-    <div class="box-collapse-wrap container-fluid container-scroll">
-      <div class="row vertical-align-header">
-        <div class="col">
-          <h4 class="shopping-cart-header">Screen Type:</h4>
-        </div>
-        <div class="col">
-          <h4 class="shopping-cart-header">Frame:</h4>
-        </div>
-        <div class="col">
-          <h4 class="shopping-cart-header">Installation Fee?</h4>
-        </div>
-        <div class="col">
-          <h4 class="shopping-cart-header">Quantity</h4>
-        </div>
-        <div class="col">
-          <h4 class="shopping-cart-header">Price:</h4>
-        </div>
-        <div class="col">
-          <h4 class="shopping-cart-header">Price With Discounts:</h4>
-        </div>
-        <div class="col">
-          <button class="btn remove" id="remove-btn-header">Remove</button>
-        </div>
+      <div class="title-box-d">
+          <h3 class="title-d">Your Cart</h3>
       </div>
-      <div class="row vertical-align-body">
-        <div class="col">
-          <h4 class="shopping-cart-header">Standard Fiberglass</h4>
-        </div>
-        <div class="col">
-          <h4 class="shopping-cart-header">Window</h4>
-        </div>
-        <div class="col">
-          <h4 class="shopping-cart-header">Yes</h4>
-        </div>
-        <div class="col">
-          <h4 class="shopping-cart-header">4</h4>
-        </div>
-        <div class="col">
-          <h4 class="shopping-cart-header">$22.50</h4>
-        </div>
-        <div class="col">
-          <h4 class="shopping-cart-header">$67.50</h4>
-        </div>
-        <div class="col">
-          <button class="btn remove">Remove</button>
-        </div>
+      <span class="close-box-collapse right-boxed ion-ios-close"></span>
+      <div class="box-collapse-wrap container-fluid container-scroll">
+          <div class="cart-header" id="cart-header">
+            <div class="row vertical-align-header">
+                <div class="col-custom">
+                  <h4 class="shopping-cart-header">Screen Type:</h4>
+                </div>
+                <div class="col-custom">
+                  <h4 class="shopping-cart-header">Frame:</h4>
+                </div>
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">Color:</h4>
+                </div>
+                <div class="col-custom">
+                  <h4 class="shopping-cart-header">Installation Fee?</h4>
+                </div>
+                <div class="col-custom">
+                  <h4 class="shopping-cart-header">Quantity</h4>
+                </div>
+                <div class="col-custom">
+                  <h4 class="shopping-cart-header">Price:</h4>
+                </div>
+                <div class="col-custom">
+                  <h4 class="shopping-cart-header">Price With Discounts:</h4>
+                </div>
+                <div class="col-custom">
+                  <button class="btn remove" id="remove-btn-header">Remove</button>
+                </div>
       </div>
-      <div class="row">
-        <div class="col-large"></div>
-        <div class="col-small"><h4 class="total" id="shopping-cart-total">Total: $0.00</h4>
-          <button class="btn btn-b">Place Order</button>
         </div>
+          <div class="cart-body" id="cart-body">
+            <!--model item in cart-->
+            <!--<div class="item row vertical-align-body">
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">Standard Fiberglass</h4>
+                </div>
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">Window</h4>
+                </div>
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">Charcoal</h4>
+                </div>
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">Yes</h4>
+                </div>
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">4</h4>
+                </div>
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">$90.00</h4>
+                </div>
+                <div class="col-custom price-col">
+                    <h4 class="shopping-cart-header item-final-price">$67.50</h4>
+                </div>
+                <div class="col-custom">
+                    <button class="btn remove">Remove</button>
+                </div>-->
+            </div>
       </div>
-    </div>
+      <div class="cart-footer">
+          <div class="row footer-row">
+              <div class="col-large" id="contact-input">
+                  <input type="text" id="name-input">
+                  <label for="name-input">Name</label>
+                  <br>
+                  <input type="email" id="email-input">
+                  <label for="email-input">Email (for order confirmation)</label>
+                  <br>
+                  <input type="tel" id="tel-input">
+                  <label for="tel-input">Phone (optional)</label>
+                  <div class="vertical-align">
+                      <br>
+                      <textarea id="notes-area"></textarea>
+                      <label for="notes-area">Additional Notes (optional)</label>
+                  </div>
+              </div>
+              <div class="col-small align-content-end">
+                  <div class="row order-row">
+                      <h4 class="total" id="shopping-cart-total">Total: $0.00</h4>
+                      <button class="btn btn-b" id="place-order-button">Place Order</button>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
 
   <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
@@ -157,7 +194,7 @@
               <br>
               <br>
               *For windows and doors that may not fit the "standard size", please use the "non-standard" option when making an
-              order. Estimates are made by size and shape*
+              order. Estimates are made by size and shape. The price calculated in the cart is based off a window frame size.*
             </p>
           </div>
         </div>
@@ -184,11 +221,14 @@
         <div class="col-small float-left">
           <div class="grid-option">
             <form>
-              <select id = "catalog-select" onclick="catalogFilter()" class="custom-select">
-                <option selected >All</option>
-                <option value="Window">Window</option>
-                <option value="Door">Door</option>
-              </select>
+              <div class="filter-label">
+              <label for="catalog-select"></label>
+                <select id = "catalog-select" onclick="catalogFilter()" class="custom-select">
+                  <option selected >All</option>
+                  <option value="Window">Window</option>
+                  <option value="Door">Door</option>
+                </select>
+              </div>
             </form>
           </div>
         </div>
@@ -565,33 +605,55 @@
           </button>
         </div>
         <div class="modal-body">
-          <h4>Quantity:</h4>
-          <label for="quantity"></label>
-          <input type="number" name="quantity" id="quantity" step="1" min="1" max="25" value="1">
-          <h4><br>Color:</h4>
-          <input type="radio" name="color" id="charcoal" value="charcoal">
-          <label for="charcoal">Charcoal</label>
-          <br>
-          <input type="radio" name="color" id="gray" value="gray">
-          <label for="gray">Gray</label>
-          <h4><br>Type:</h4>
-          <input type="radio" name="frame" id="window" value="window">
-          <label for="window">Window</label>
-          <br>
-          <input type="radio" name="frame" id="door" value="door">
-          <label for="door">Door</label>
-          <br>
-          <input type="radio" name="frame" id="non-standard" value="non-standard">
-          <label for="non-standard">Non-Standard</label>
+            <h4 id="modal-quantity">Quantity:</h4>
+            <label for="quantity-input"></label>
+            <input type="number" name="quantity" id="quantity-input" step="1" min="1" max="25" value="1">
+            <h4><br>Color:</h4>
+            <div id="color-c" class="input-div">
+                <input type="radio" name="color" id="charcoal" value="charcoal">
+                <label for="charcoal">Charcoal</label>
+                <br>
+            </div>
+            <div id="color-g" class="input-div">
+                <input type="radio" name="color" id="gray" value="gray">
+                <label for="gray">Gray</label>
+                <br>
+            </div>
+            <div id="color-cw" class="input-div">
+                <input type="radio" name="color" id="charcoal/white" value="charcoal/white">
+                <label for="charcoal/white">Charcoal/White</label>
+            </div>
+            <h4><br>Type:</h4>
+            <div id="type-w" class="input-div">
+                <input type="radio" name="frame" id="window" value="window">
+                <label for="window">Window</label>
+                <br>
+            </div>
+            <div id="type-d" class="input-div">
+                <input type="radio" name="frame" id="door" value="door">
+                <label for="door">Door</label>
+                <br>
+            </div>
+            <div id="type-n" class="input-div">
+                <input type="radio" name="frame" id="non-standard" value="non-standard">
+                <label for="non-standard">Non-Standard</label>
+            </div>
+            <h4><br>Pay for Installation?</h4>
+            <input type="radio" name="installation" id="installation-yes" value="yes">
+            <label for="installation-yes">Yes</label>
+            <br>
+            <input type="radio" name="installation" id="installation-no" value="no">
+            <label for="installation-no">No</label>
+            <br>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-primary" onclick="addToCart()">Add To Cart</button>
+          <button type="button" class="btn btn-primary" onclick="addToCart()" data-dismiss="modal">Add To Cart</button>
         </div>
       </div>
     </div>
   </div>
-
+  <div id="toast">Item added to cart</div>
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>
 
@@ -603,6 +665,7 @@
   <script src="lib/easing/easing.min.js"></script>
   <script src="lib/owlcarousel/owl.carousel.min.js"></script>
   <script src="lib/scrollreveal/scrollreveal.min.js"></script>
+
   <!-- Contact Form JavaScript File -->
   <script src="contactform/contactform.js"></script>
 

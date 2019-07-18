@@ -774,7 +774,6 @@ a:hover {
 
 .box-collapse-wrap {
   opacity: 0;
-  position: absolute;
   left: 0;
   top: 6.5rem;
   bottom: 5rem;
@@ -788,6 +787,10 @@ a:hover {
   transition: opacity 0.5s 0.5s ease, -webkit-transform 0.5s 0.5s ease;
   transition: transform 0.5s 0.5s ease, opacity 0.5s 0.5s ease;
   transition: transform 0.5s 0.5s ease, opacity 0.5s 0.5s ease, -webkit-transform 0.5s 0.5s ease;
+}
+
+.box-collapse-open {
+  overflow-y: hidden;
 }
 
 .box-collapse-open .click-closed {
@@ -1135,6 +1138,33 @@ a:hover {
   border-color: #313131;
 }
 
+#email-input, #tel-input, #name-input, #notes-area {
+  margin-right: 10px;
+}
+
+#notes-area {
+  min-height: 50px;
+  width: 250px;
+}
+
+#contact-input {
+  display: inline-block;
+}
+
+.footer-row {
+  border: solid 2px black;
+  padding: 10px;
+}
+
+.cart-footer {
+  margin: 15px;
+  padding: 20px;
+}
+
+#shopping-cart-total {
+  margin-bottom: 20px;
+}
+
 .shopping-cart-row {
   display: -ms-flexbox;
   display: flex;
@@ -1142,6 +1172,11 @@ a:hover {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
 }
 
 .property-grid .grid-option .custom-select option {
@@ -1599,6 +1634,13 @@ footer .credits {
   margin-bottom: 15px;
 }
 
+.filter-label {
+  display: block;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
 .form-a #errormessage {
   color: red;
   display: none;
@@ -1670,8 +1712,12 @@ footer .credits {
     overflow-x: auto;
   }
   .container-scroll > .row {
-    width: 150%; /* = 100% * 4/3 */
+    width: 133.33%; /* = 100% * 4/3 */
   }
+}
+
+.cart-header {
+  margin: 15px;
 }
 
 .vertical-align-header {
@@ -1680,6 +1726,8 @@ footer .credits {
   justify-content: center;
   flex-direction: row;
   border-bottom: 2px solid #2eca6a;
+  flex-wrap: nowrap;
+  min-width: 1100px;
 }
 .vertical-align-body {
   display: flex;
@@ -1688,6 +1736,17 @@ footer .credits {
   flex-direction: row;
   border-bottom: 2px solid #4e555b;
   margin-top: 20px;
+  flex-wrap: nowrap;
+  min-width: 1100px;
+}
+
+.col-custom {
+  width: 12.5%;
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .btn.btn-a,
@@ -1742,12 +1801,65 @@ footer .credits {
   margin-right: 0.5rem;
 }
 
+#toast {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1500; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  right: 50%;
+  top: 30px; /* 30px from the bottom */
+}
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#toast.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {top: 30px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {top: 30px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+.order-row {
+  vertical-align: bottom;
+  margin-top: 20%;
+}
+
 .col-small {
   position: relative;
   width: 33%;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+
 }
 
 .hide {
