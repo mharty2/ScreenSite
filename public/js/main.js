@@ -72,6 +72,7 @@
 		$("input[type='radio']").each(function () {
 			this.checked = false;
 		});
+		$('.modal-body-section').removeClass('background-red');
 		$('.input-div').show();
 		let cw = $('#color-cw');
 		let g = $('#color-g');
@@ -130,6 +131,7 @@
 		getTotal();
 	});
 
+
 	$('#place-order-button').on('click', function (event) {
 		let items = document.getElementsByClassName('item');
 		if (items.length === 0) {
@@ -152,7 +154,6 @@
 		}
 		stringInfo += '<br><br>' + 'For a total of ' + document.getElementById('shopping-cart-total')
 			.innerText.replace('Total: ', '');
-		console.log(stringInfo);
 		document.getElementById('name-input').value = '';
 		document.getElementById('email-input').value = '';
 		document.getElementById('tel-input').value = '';
@@ -167,7 +168,6 @@
 				x.className = x.className.replace("show", "");
 				x.innerText = text;
 			}, 7500);
-
 		//works but taken out to save emails
 		/*const template_params = {
 			"to_email": email,
@@ -427,20 +427,66 @@ function calculatePrice(type, frame, quantity, installation) {
 }
 
 function checkModalInputs() {
-	if(document.getElementById('charcoal').checked || document.getElementById('gray').checked || document.getElementById('charcoal/white').checked) {
-		if (document.getElementById('window').checked || document.getElementById('door').checked || document.getElementById('non-standard').checked) {
-			if(document.getElementById('installation-yes').checked || document.getElementById('installation-no').checked) {
-				return true;
+	let toReturn = true;
+	if(!(document.getElementById('charcoal').checked || document.getElementById('gray').checked || document.getElementById('charcoal/white').checked)) {
+		toReturn = false;
+		let colorSection = document.getElementById('color-section');
+		colorSection.classList.add('background-red');
+		let colorInputs = colorSection.getElementsByTagName('input');
+		for (let i = 0; i < colorInputs.length; i++) {
+			colorInputs[i].onclick = function () {
+				colorSection.classList.remove('background-red');
 			}
 		}
 	}
-	/*console.log("charcoal checked " + document.getElementById('charcoal').checked);
+	if (!(document.getElementById('window').checked || document.getElementById('door').checked || document.getElementById('non-standard').checked)) {
+		toReturn = false;
+		let frameSection = document.getElementById('frame-section');
+		frameSection.classList.add('background-red');
+		let frameInputs = frameSection.getElementsByTagName('input');
+		for (let i = 0; i < frameInputs.length; i++) {
+			frameInputs[i].onclick = function () {
+				frameSection.classList.remove('background-red');
+			}
+		}
+	}
+	if(!(document.getElementById('installation-yes').checked || document.getElementById('installation-no').checked)) {
+		toReturn = false;
+		let installationSection = document.getElementById('installation-section');
+		installationSection.classList.add('background-red');
+		let installationInputs = installationSection.getElementsByTagName('input');
+		for (let i = 0; i < installationInputs.length; i++) {
+			installationInputs[i].onclick = function () {
+				installationSection.classList.remove('background-red');
+			}
+		}
+	}
+
+	/*
+	$("input[type='radio']", '.modal-body-section').each(function () {
+		this.click( function () {
+			let div = this.parentElement.parentElement;
+			console.log(div);
+			div.removeClass('background-red');
+		});
+	});*/
+	/*
+
+	console.log("charcoal checked " + document.getElementById('charcoal').checked);
 	console.log("gray checked " + document.getElementById('gray').checked);
+	console.log("charcoal/white checked " + document.getElementById('charcoal/white').checked);
 	console.log("window checked " + document.getElementById('window').checked);
 	console.log("door checked " + document.getElementById('door').checked);
-	console.log("non-standard checked " + document.getElementById('non-standard').checked);*/
-	alert('Please fill out all fields');
-	return false;
+	console.log("non-standard checked " + document.getElementById('non-standard').checked);
+	console.log("installation-yes checked " + document.getElementById('installation-yes').checked);
+	console.log("installation-no checked " + document.getElementById('installation-no').checked);*/
+	if (!toReturn) {
+		$('#add-to-cart').removeAttr('data-dismiss');
+		alert('Please fill out all fields');
+	} else {
+		$('#add-to-cart').attr('data-dismiss', 'modal');
+	}
+	return toReturn;
 }
 
 function getTotal() {

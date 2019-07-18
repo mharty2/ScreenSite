@@ -1801,6 +1801,10 @@ footer .credits {
   margin-right: 0.5rem;
 }
 
+.background-red {
+  background-color: rgba(238,32,32,.5);
+}
+
 #toast {
   visibility: hidden; /* Hidden by default. Visible on click */
   min-width: 250px; /* Set a default minimum width */
