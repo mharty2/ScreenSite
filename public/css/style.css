@@ -1138,7 +1138,7 @@ a:hover {
   border-color: #313131;
 }
 
-#email-input, #tel-input, #name-input, #notes-area {
+#email-input, #tel-input, #name-input, #notes-area, #address-input {
   margin-right: 10px;
 }
 
@@ -1829,6 +1829,19 @@ footer .credits {
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
+.marg-vert {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#toast.show-long {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 7s;
+  animation: fadein 0.5s, fadeout 0.5s 7s;
+}
+
 /* Animations to fade the snackbar in and out */
 @-webkit-keyframes fadein {
   from {top: 0; opacity: 0;}
@@ -1862,8 +1875,6 @@ footer .credits {
   padding-left: 15px;
   align-items: center;
   display: flex;
-  justify-content: flex-end;
-
 }
 
 .hide {

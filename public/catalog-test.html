@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>The Screensavers</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("user_WBvz5LordDa1Epl7Oc8OF");
+        })();
+    </script>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <!--<link rel="manifest" href="favicon_io/site.webmanifest">-->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+      Theme Name: EstateAgency
+      Theme URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
+      Author: BootstrapMade.com
+      License: https://bootstrapmade.com/license/
+    ======================================================= -->
+</head>
+
+<body>
+<!--/ Nav Star /-->
+<div class="click-closed"></div> <!-- makes the background faded black-->
+<div class="box-collapse">
+    <div class="title-box-d">
+        <h3 class="title-d">Your Cart</h3>
+    </div>
+    <span class="close-box-collapse right-boxed ion-ios-close"></span>
+    <div class="box-collapse-wrap container-fluid container-scroll">
+        <div class="cart-header" id="cart-header">
+            <div class="row vertical-align-header">
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">Screen Type:</h4>
+                </div>
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">Frame:</h4>
+                </div>
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">Color:</h4>
+                </div>
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">Installation Fee?</h4>
+                </div>
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">Quantity</h4>
+                </div>
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">Price:</h4>
+                </div>
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">Price With Discounts:</h4>
+                </div>
+                <div class="col-custom">
+                    <button class="btn remove" id="remove-btn-header">Remove</button>
+                </div>
+            </div>
+        </div>
+        <div class="cart-body" id="cart-body">
+            <!--model item in cart-->
+            <!--<div class="item row vertical-align-body">
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">Standard Fiberglass</h4>
+                </div>
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">Window</h4>
+                </div>
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">Charcoal</h4>
+                </div>
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">Yes</h4>
+                </div>
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">4</h4>
+                </div>
+                <div class="col-custom">
+                    <h4 class="shopping-cart-header">$90.00</h4>
+                </div>
+                <div class="col-custom price-col">
+                    <h4 class="shopping-cart-header item-final-price">$67.50</h4>
+                </div>
+                <div class="col-custom">
+                    <button class="btn remove">Remove</button>
+                </div>-->
+        </div>
+    </div>
+    <div class="cart-footer">
+        <div class="row footer-row">
+            <div class="col-large" id="contact-input">
+                <input type="text" id="name-input">
+                <label for="name-input">Name</label>
+                <br>
+                <input type="email" id="email-input">
+                <label for="email-input">Email (for order confirmation)</label>
+                <br>
+                <input type="tel" id="tel-input">
+                <label for="tel-input">Phone (optional)</label>
+                <div class="vertical-align">
+                    <br>
+                    <textarea id="notes-area"></textarea>
+                    <label for="notes-area">Additional Notes (optional)</label>
+                </div>
+            </div>
+            <div class="col-small align-content-end">
+                <div class="row order-row">
+                    <h4 class="total" id="shopping-cart-total">Total: $0.00</h4>
+                    <button class="btn btn-b" id="place-order-button">Place Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+    <div class="container">
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+                aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <a class="navbar-brand text-brand" href="index.html">The<span class="color-b">Screensavers</span></a>
+        <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none" data-toggle="collapse"
+                data-target="#navbarTogglerDemo01" aria-expanded="false">
+            <span class="fa fa-search" aria-hidden="true"></span>
+        </button>
+        <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="catalog.html">Catalog</a>
+                </li>
+            </ul>
+        </div>
+        <button type="button" class="shopping-cart-button navbar-toggle-box-collapse" data-toggle="collapse" aria-expanded="false">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="text">Shopping Cart</span>
+        </button>
+    </div>
+</nav>
+<!--/ Nav End /-->
+
+<!--/ Intro Single star /-->
+<div class="intro-single">
+    <div class="container">
+        <div class="row">
+            <div class = "col-large">
+                <div class = "info-box">
+                    <h1 class="title-single">Pricing Information</h1>
+                    <p class="text-black-50">
+                        Pricing is calculated by a number of factors including quantity, type of screen, type of
+                        frame, and installation. Please note that the display price in the info section <span class="red-text"> may not be the actual price.</span>
+                        The actual price will be calculated and visible in your cart. <br>
+                        <br>
+                        For windows, there is a $2.50 installation fee per window that is capped at $5.00. Feel free to do the
+                        installation part yourself, and we'll gladly waive the fee! Additionally, if your order consists of 4 or more windows
+                        with the same type of screen, then that group of windows is charged 25% less.<br>
+                        <br>
+                        Doors also have the $2.50 installation fee per door, but it is not capped. We will waive the fee if you
+                        do the installation yourself. Doors are also not eligible for the group discount that applies to windows.<br>
+                        <br>
+                        <br>
+                        *For windows and doors that may not fit the "standard size", please use the "non-standard" option when making an
+                        order. Estimates are made by size and shape. The price calculated in the cart is based off a window frame size.*
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+        <div class="row">
+            <div class="col-large">
+                <div class="title-single-box">
+                    <h1 class="title-single">Screen options</h1>
+                    <p class="text-black-50">Hover over image for details</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ Intro Single End /-->
+
+<!--/ Property Grid Star /-->
+<section class="property-grid grid">
+    <div class="container">
+        <div class="row">
+            <div class="col-small float-left">
+                <div class="grid-option">
+                    <form>
+                        <div class="filter-label">
+                            <label for="catalog-select"></label>
+                            <select id = "catalog-select" onclick="catalogFilter()" class="custom-select">
+                                <option selected >All</option>
+                                <option value="Window">Window</option>
+                                <option value="Door">Door</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-large"></div>
+            <div class="col-md-4 window-screen door">
+                <h2 class="card-title-a">Standard Fiberglass</h2>
+                <div class="card-box-a card-shadow">
+                    <div class="img-box-a">
+                        <img src="img/Standard-Fiberglass-Screen-Sample.jpg" alt="" class="img-a img-fluid">
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-overlay-a-content">
+                            <div class="card-body-a">
+                                <p class="screen-description">The standard for most screens in your house. Durable and
+                                    the only screen that comes in gray, this is the most popular choice for windows.</p>
+                                <div class="price-box d-flex">
+                                    <span class="price-a" data-toggle="modal" data-target="#addToCartModal"><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                                </div>
+                            </div>
+                            <div class="card-footer-a">
+                                <ul class="card-info d-flex justify-content-around">
+                                    <li>
+                                        <h4 class="card-info-title">Window</h4>
+                                        <span>$20.00</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="card-info-title">Door</h4>
+                                        <span>$25.00</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="card-info-title">Colors:</h4>
+                                        <span>Charcoal, Gray</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 window-screen door">
+                <h2 class="card-title-a">Clear Advantage</h2>
+                <div class="card-box-a card-shadow">
+                    <div class="img-box-a">
+                        <img src="img/Clear-Advantage-Screen-Sample.jpg" alt="" class="img-a img-fluid">
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-overlay-a-content">
+                            <div class="card-header-a">
+                            </div>
+                            <div class="card-body-a">
+                                <p class="screen-description">Clear Advantage is optimized to allow more airflow and light with extended durability
+                                    , while still maintaining visibility.</p>
+                                <div class="price-box d-flex">
+                                    <span class="price-a"  data-toggle="modal" data-target="#addToCartModal"><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                                </div>
+                            </div>
+                            <div class="card-footer-a">
+                                <ul class="card-info d-flex justify-content-around">
+                                    <li>
+                                        <h4 class="card-info-title">Window</h4>
+                                        <span>$22.50</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="card-info-title">Door</h4>
+                                        <span>$30.00</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="card-info-title">Colors:</h4>
+                                        <span>Charcoal</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 window-screen door">
+                <h2 class="card-title-a">Extra Strength</h2>
+                <div class="card-box-a card-shadow">
+                    <div class="img-box-a">
+                        <img src="img/Extra-Strength-Screen-Sample.jpg" alt="" class="img-a img-fluid">
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-overlay-a-content">
+                            <div class="card-header-a">
+                            </div>
+                            <div class="card-body-a">
+                                <p class="screen-description">Extra Strength screen is thicker, sacrificing some visibility for
+                                    its resistance to wear and tear.</p>
+                                <div class="price-box d-flex">
+                                    <span class="price-a" data-toggle="modal" data-target="#addToCartModal"><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                                </div>
+                            </div>
+                            <div class="card-footer-a">
+                                <ul class="card-info d-flex justify-content-around">
+                                    <li>
+                                        <h4 class="card-info-title">Window</h4>
+                                        <span>$22.50</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="card-info-title">Door</h4>
+                                        <span>$30.00</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="card-info-title">Colors:</h4>
+                                        <span>Charcoal</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 window-screen door">
+                <h2 class="card-title-a">Small Insect</h2>
+                <div class="card-box-a card-shadow">
+                    <div class="img-box-a">
+                        <img src="img/Insect-Screen-Sample.jpg" alt="" class="img-a img-fluid">
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-overlay-a-content">
+                            <div class="card-header-a">
+                            </div>
+                            <div class="card-body-a">
+                                <p class="screen-description">The Small Insect screen has a tighter weave to prevent insects from
+                                    entering the house via the holes.</p>
+                                <div class="price-box d-flex">
+                                    <span class="price-a" data-toggle="modal" data-target="#addToCartModal"><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                                </div>
+                            </div>
+                            <div class="card-footer-a">
+                                <ul class="card-info d-flex justify-content-around">
+                                    <li>
+                                        <h4 class="card-info-title">Window</h4>
+                                        <span>$22.50</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="card-info-title">Door</h4>
+                                        <span>$30.00</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="card-info-title">Colors:</h4>
+                                        <span>Charcoal</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 door">
+                <h2 class="card-title-a">Pet Resistant</h2>
+                <div class="card-box-a card-shadow">
+                    <div class="img-box-a">
+                        <img src="img/Pet-Resistant-Screen-Sample.jpg" alt="" class="img-a img-fluid">
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-overlay-a-content">
+                            <div class="card-header-a">
+                            </div>
+                            <div class="card-body-a">
+                                <p class="screen-description">Pet Resistant screens' thicker weaves allow them to resist damage
+                                    from even the most determined pets. The weave is thicker than Extra-Strength, but has larger holes than
+                                    Small Insect.</p>
+                                <div class="price-box d-flex">
+                                    <span class="price-a" data-toggle="modal" data-target="#addToCartModal"><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                                </div>
+                            </div>
+                            <div class="card-footer-a">
+                                <ul class="card-info d-flex justify-content-around">
+                                    <li>
+                                        <h4 class="card-info-title">Window</h4>
+                                        <span>N/A</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="card-info-title">Door</h4>
+                                        <span>$32.50</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="card-info-title">Colors:</h4>
+                                        <span>Charcoal</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 window-screen">
+                <h2 class="card-title-a">Solar Protection</h2>
+                <div class="card-box-a card-shadow">
+                    <div class="img-box-a">
+                        <img src="img/Solar-Screen-Sample.jpg" alt="" class="img-a img-fluid">
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-overlay-a-content">
+                            <div class="card-header-a">
+                            </div>
+                            <div class="card-body-a">
+                                <p class="screen-description">The Solar Protection screen is meant to block out the majority of light.
+                                    It's used in situations where you'd like to reduce cooling costs, or prevent the sun-bleaching of furniture, carpeting, and drapes.</p>
+                                <div class="price-box d-flex">
+                                    <span class="price-a" data-toggle="modal" data-target="#addToCartModal"><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                                </div>
+                            </div>
+                            <div class="card-footer-a">
+                                <ul class="card-info d-flex justify-content-around">
+                                    <li>
+                                        <h4 class="card-info-title">Window</h4>
+                                        <span>$25.00</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="card-info-title">Door</h4>
+                                        <span>N/A</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="card-info-title">Colors:</h4>
+                                        <span>Charcoal</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 door">
+                <h2 class="card-title-a">Doorway Alert</h2>
+                <div class="card-box-a card-shadow">
+                    <div class="img-box-a">
+                        <img src="img/Doorway-Alert-Screen-Sample.jpg" alt="" class="img-a img-fluid">
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-overlay-a-content">
+                            <div class="card-header-a">
+                            </div>
+                            <div class="card-body-a">
+                                <p class="screen-description">Doorway Alert uses a mix of charcoal and white colored screen to make the
+                                    screen more visible and prevent people from accidentally walking into it.</p>
+                                <div class="price-box d-flex">
+                                    <span class="price-a" data-toggle="modal" data-target="#addToCartModal"><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                                </div>
+                            </div>
+                            <div class="card-footer-a">
+                                <ul class="card-info d-flex justify-content-around">
+                                    <li>
+                                        <h4 class="card-info-title">Window</h4>
+                                        <span>N/A</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="card-info-title">Door</h4>
+                                        <span>$27.50</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="card-info-title">Colors:</h4>
+                                        <span>Charcoal/White</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 window-screen door">
+                <h2 class="card-title-a">Pool/Patio</h2>
+                <div class="card-box-a card-shadow">
+                    <div class="img-box-a">
+                        <img src="img/Pool-and-Patio-Screen-Sample.jpg" alt="" class="img-a img-fluid">
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-overlay-a-content">
+                            <div class="card-header-a">
+                            </div>
+                            <div class="card-body-a">
+                                <p class="screen-description">The Pool/Patio screen has UV coating and is resistant to high temperatures.
+                                    It's commonly used in pool enclosures and screened-in porches.</p>
+                                <div class="price-box d-flex">
+                                    <span class="price-a" data-toggle="modal" data-target="#addToCartModal"><i class="fa fa-shopping-cart"></i> Add to Cart</span>
+                                </div>
+                            </div>
+                            <div class="card-footer-a">
+                                <ul class="card-info d-flex justify-content-around">
+                                    <li>
+                                        <h4 class="card-info-title">Window</h4>
+                                        <span>22.50</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="card-info-title">Door</h4>
+                                        <span>$27.50</span>
+                                    </li>
+                                    <li>
+                                        <h4 class="card-info-title">Colors:</h4>
+                                        <span>Charcoal</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/ Property Grid End /-->
+
+<!--/ footer Star /-->
+<section class="section-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="widget-a">
+                    <div class="w-header-a">
+                        <h3 class="w-title-a text-brand">The ScreenSavers</h3>
+                    </div>
+                    <div class="w-footer-a">
+                        <ul class="list-unstyled">
+                            <li class="color-a">
+                                <span class="color-text-a">Phone: </span>847-910-4482</li>
+                            <li class="color-a">
+                                <span class="color-text-a">Email: </span>michaelharty2112@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="nav-footer">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="about.html">About</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="catalog.html">Catalog</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copyright-footer">
+                </div>
+                <div class="credits">
+                    <!--
+                      All the links in the footer should remain intact.
+                      You can delete the links only if you purchased the pro version.
+                      Licensing information: https://bootstrapmade.com/license/
+                      Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=EstateAgency
+                    -->
+                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--/ Footer End /-->
+<div class="modal fade" id="addToCartModal" tabindex="-1" role="dialog" aria-labelledby="addToCartModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Basic Modal </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">X</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body-section" id="quantity-section">
+                    <h4 id="modal-quantity">Quantity:</h4>
+                    <label for="quantity-input"></label>
+                    <input type="number" name="quantity" id="quantity-input" step="1" min="1" max="25" value="1">
+                </div>
+                <br>
+                <div class="modal-body-section" id="color-section">
+                    <h4>Color:</h4>
+                    <div id="color-c" class="input-div">
+                        <input type="radio" name="color" id="charcoal" value="charcoal">
+                        <label for="charcoal">Charcoal</label>
+                        <br>
+                    </div>
+                    <div id="color-g" class="input-div">
+                        <input type="radio" name="color" id="gray" value="gray">
+                        <label for="gray">Gray</label>
+                        <br>
+                    </div>
+                    <div id="color-cw" class="input-div">
+                        <input type="radio" name="color" id="charcoal/white" value="charcoal/white">
+                        <label for="charcoal/white">Charcoal/White</label>
+                    </div>
+                </div>
+                <br>
+                <div class="modal-body-section" id="frame-section">
+                    <h4>Type:</h4>
+                    <div id="type-w" class="input-div">
+                        <input type="radio" name="frame" id="window" value="window">
+                        <label for="window">Window</label>
+                        <br>
+                    </div>
+                    <div id="type-d" class="input-div">
+                        <input type="radio" name="frame" id="door" value="door">
+                        <label for="door">Door</label>
+                        <br>
+                    </div>
+                    <div id="type-n" class="input-div">
+                        <input type="radio" name="frame" id="non-standard" value="non-standard">
+                        <label for="non-standard">Non-Standard</label>
+                    </div>
+                </div>
+                <br>
+                <div class="modal-body-section" id="installation-section">
+                    <h4>Pay for Installation?</h4>
+                    <input type="radio" name="installation" id="installation-yes" value="yes">
+                    <label for="installation-yes">Yes</label>
+                    <br>
+                    <input type="radio" name="installation" id="installation-no" value="no">
+                    <label for="installation-no">No</label>
+                    <br>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="addToCart()" id="add-to-cart" data-dismiss="modal">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="toast">Item added to cart</div>
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<div id="preloader"></div>
+
+<!-- JavaScript Libraries -->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/popper/popper.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/scrollreveal/scrollreveal.min.js"></script>
+
+<!-- Contact Form JavaScript File -->
+<script src="contactform/contactform.js"></script>
+
+<!-- Template Main Javascript File -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

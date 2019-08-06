@@ -140,39 +140,96 @@
 		}
 		let name = document.getElementById('name-input').value;
 		let email = document.getElementById('email-input').value;
+		let address = document.getElementById('address-input').value;
 		let tel = document.getElementById('tel-input').value;
+		if (tel === '') {
+			tel = 'not provided'
+		}
 		let message = document.getElementById('notes-area').value;
-		if (name === '' || email === '') {
+		if (message === '') {
+			message = 'no message';
+		}
+		if (name === '' || email === '' || address === '') {
 			window.alert('Please fill out required contact info fields.');
 			return;
 		}
+		$.ajax({
+			type: "POST",
+			url: "PHP/customer.php",
+			async: false,
+			data: {name : name, email: email, address:address, tel: tel}
+		}).done(function (msg) {
+			console.log(msg);
+		});
 		let stringInfo = '';
-		while (items.length > 0) {
-			let info = getRowInfo(items[0]);
+		for (let i = 0; i < items.length; i++) {
+			const info = getRowInfo(items[i]);
 			stringInfo += info[4] + ' ' + info[0] + ' ' + info[1] + '(s) ' + '<br>';
-			items[0].remove();
 		}
 		stringInfo += '<br><br>' + 'For a total of ' + document.getElementById('shopping-cart-total')
 			.innerText.replace('Total: ', '');
+		$.ajax({
+			type: "POST",
+			url: "PHP/order.php",
+			async: false,
+			data: {
+				name: name,
+				email: email,
+				address: address,
+				tel: tel,
+				message: message,
+				order_str: stringInfo
+			}
+		}).done(function (msg) {
+			console.log('order reached');
+			console.log(msg);
+		});
+		for (let i = 0; i < items.length; i++) {
+			const info = getRowInfo(items[i]);
+			(function(e) {
+				$.ajax({
+					type: "POST",
+					url: "PHP/item.php",
+					async: false,
+					data: {
+						type: e[0],
+						frame: e[1],
+						color: e[2],
+						installation: e[3],
+						quantity: e[4],
+						price: e[5],
+						discount_price: e[6]
+					}
+				}).done(function (msg) {
+					console.log(msg);
+				});
+			})(info);
+		}
+		//resetting all fields
+		while (items.length > 0) {
+			items[0].remove();
+		}
 		document.getElementById('name-input').value = '';
 		document.getElementById('email-input').value = '';
 		document.getElementById('tel-input').value = '';
 		document.getElementById('notes-area').value = '';
+		document.getElementById('address-input').value = '';
 		getTotal();
 		$('body').removeClass('box-collapse-open').addClass('box-collapse-closed');
 		let x = document.getElementById("toast");
-		let text = x.innerText;
 		x.innerText = 'Order Placed! Please check email/spam for confirmation';
-		x.className = "show";
+		x.className = "show-long";
 		setTimeout(function() {
-				x.className = x.className.replace("show", "");
-				x.innerText = text;
+				x.className = x.className.replace("show-long", "");
+				x.innerText = "Item added to cart";
 			}, 7500);
 		//works but taken out to save emails
 		/*const template_params = {
 			"to_email": email,
 			"to_name": name,
-			"message_html": stringInfo
+			"message_html": stringInfo,
+			"order_message": message,
+			"phone_number": tel
 		};
 
 		const service_id = "default_service";
@@ -280,7 +337,7 @@ function catalogFilter() {
 		$('.window-screen').show();
 	}
 }
-//todo refine to let user know which fields
+
 function addToCart() {
 	if (checkModalInputs()) {
 		const type = document.getElementById('myModalLabel').innerText;
@@ -382,16 +439,6 @@ function calculatePrice(type, frame, quantity, installation) {
 				}
 			}
 			break;
-		case 'Clear Advantage' || 'Extra Strength' || 'Small Insect' || 'Pool/Patio':
-			if (frame === 'Door') {
-				singlePrice = 27.50;
-			} else {
-				singlePrice = 22.50;
-				if (quantity > 2) {
-					installationFee = 5.00;
-				}
-			}
-			break;
 		case 'Pet Resistant':
 			if (frame === 'Door') {
 				singlePrice = 32.50;
@@ -409,6 +456,16 @@ function calculatePrice(type, frame, quantity, installation) {
 			}
 			break;
 		case 'Doorway Alert':
+			if (frame === 'Door') {
+				singlePrice = 27.50;
+			} else {
+				singlePrice = 22.50;
+				if (quantity > 2) {
+					installationFee = 5.00;
+				}
+			}
+			break;
+		default:
 			if (frame === 'Door') {
 				singlePrice = 27.50;
 			} else {
@@ -517,17 +574,5 @@ function getRowInfo(ItemRow) {
 		textArray.push(info[i].innerText);
 	}
 	return textArray;
-}
-
-function sendEmail (message) {
-	let template_params = {
-		"to_email": "to_email_value",
-		"to_name": "to_name_value",
-		"message_html": "message_html_value"
-	};
-
-	let service_id = "default_service";
-	let template_id = "template_a1Pt7OUW";
-	emailjs.send(service_id, template_id, template_params);
 }
 
