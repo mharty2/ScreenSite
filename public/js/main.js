@@ -153,6 +153,10 @@
 			window.alert('Please fill out required contact info fields.');
 			return;
 		}
+		if (window.confirm('Please confirm that you placed your order')) {
+		} else {
+			return;
+		}
 		$.ajax({
 			type: "POST",
 			url: "PHP/customer.php",

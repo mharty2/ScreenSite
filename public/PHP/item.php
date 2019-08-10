@@ -1,7 +1,9 @@
 <?php
 $servername = "localhost";
-$username = "michael_admin";
-$password = "admin_harty21";
+$username = "root";
+// your password:
+$password = "";
+//your database name:
 $db = "screensite_database";
 $type = $_POST['type'];
 $frame = $_POST['frame'];
